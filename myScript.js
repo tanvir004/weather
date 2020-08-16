@@ -10,7 +10,7 @@ button.addEventListener('click', function(){
 .then(response => response.json())
 .then(data => {
     var nameValue = data['name'];
-    // var disIcon = data['weather'][0]['icon'];
+    var disIcon = data['weather'][0]['icon'];
     var tempValue = data['main']['temp'];
     var celsius = tempValue-273.15;
     var celsiusRound = Math.round(celsius);
@@ -18,7 +18,8 @@ button.addEventListener('click', function(){
     document.querySelector('.name').innerHTML = nameValue;
     temp.innerHTML = celsiusRound;
     lead.innerHTML = leadValue;
-    // icon.innerHTML = disIcon;
+    icon.innerHTML = "http://openweathermap.org/img/wn/"+disIcon+"@2x.png";
+    
     console.log(data)
 })
 })
